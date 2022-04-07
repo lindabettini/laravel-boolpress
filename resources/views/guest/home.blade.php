@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <!-- Styles -->
-    <style>
+    <!-- <style>
         html,
         body {
             background-color: #fff;
@@ -63,14 +63,14 @@
         .m-b-md {
             margin-bottom: 30px;
         }
-    </style>
+    </style> -->
     <link href="{{ asset('css/app.css')}}" rel="stylesheet" type="text/css">
     <script src="{{ asset('js/front.js')}}" defer></script>
 </head>
 
 <body>
-    <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
+    <div>
+        <!-- @if (Route::has('login'))
         <div class="top-right links">
             @auth
             <a href="{{ url('/admin') }}">Home</a>
@@ -82,12 +82,10 @@
             @endif
             @endauth
         </div>
-        @endif
+        @endif -->
 
         <div class="content">
-            <div id="root">
-
-            </div>
+            <div id="root"></div>
         </div>
     </div>
 </body>

@@ -1,5 +1,9 @@
 <template>
-    <div class="card-header" v-text="title">Benvenuti</div>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 h1">{{ title }}</span>
+        </nav>
+    </header>
 </template>
 
 <script>
