@@ -2,6 +2,11 @@
     <section id="post-list" class="my-3">
         <h2>Posts</h2>
         <Loader v-if="isLoading" />
+
+        <div class="alert alert-danger" role="alert" v-if="hasError">
+            Si è verificato un errore!
+        </div>
+
         <ul v-if="posts.length">
             <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
         </ul>
@@ -20,6 +25,7 @@ export default {
         return {
             posts: [],
             isLoading: false,
+            hasError: false,
         };
     },
     methods: {
@@ -32,6 +38,7 @@ export default {
                 })
                 .catch((err) => {
                     console.error(err);
+                    this.hasError = true;
                 })
                 .then(() => {
                     this.isLoading = false;
