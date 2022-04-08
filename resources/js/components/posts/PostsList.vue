@@ -3,14 +3,21 @@
         <h2>Posts</h2>
         <Loader v-if="isLoading" />
 
-        <div class="alert alert-danger" role="alert" v-if="hasError">
-            Si è verificato un errore!
-        </div>
+        <div v-else>
+            <div
+                class="alert alert-danger d-flex justify-content-between"
+                role="alert"
+                v-if="hasError"
+            >
+                Si è verificato un errore!
+                <span role="button" @click="hasError = !hasError">&times;</span>
+            </div>
 
-        <ul v-if="posts.length">
-            <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
-        </ul>
-        <p v-else>Non ci sono post</p>
+            <ul v-if="posts.length">
+                <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
+            </ul>
+            <p v-else>Non ci sono post</p>
+        </div>
     </section>
 </template>
 
