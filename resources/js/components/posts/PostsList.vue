@@ -14,7 +14,7 @@
             </div>
 
             <ul v-if="posts.length">
-                <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
+                <PostCard v-for="post in posts" :key="post.id" :post="post" />
             </ul>
             <p v-else>Non ci sono post</p>
         </div>
@@ -23,10 +23,13 @@
 
 <script>
 import Loader from "../Loader.vue";
+import PostCard from "./PostCard.vue";
+
 export default {
     name: "PostsList",
     components: {
         Loader,
+        PostCard,
     },
     data() {
         return {
